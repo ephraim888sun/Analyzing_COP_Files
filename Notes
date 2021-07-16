@@ -1,0 +1,94 @@
+# #Now give the pdf name
+# #pdfFileObj = open(r'C:\Users\Ephraim.Sun\Desktop\proj2\test\ALE 1\ALE 1 - CURRENT SCHEMATIC.pdf', 'rb')
+# #pdfFileObj = 'C:\\Users\\Ephraim.Sun\\Desktop\\proj2\\test\\ABADAN 1\\ABADAN 1T - CURRENT SCHEMATIC.pdf'
+# pdfFileObj = open(r'C:\Users\Ephraim.Sun\Desktop\proj2\test\ADA 1\ADA 1 - CURRENT SCHEMATIC.pdf', 'rb')
+#
+#
+# pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+# #print(pdfReader.numPages) # will give total number of pages in pdf
+#
+# #extract all texts from page1
+# pageObj = pdfReader.getPage(0)
+# page_content = pageObj.extractText()
+#
+# """get a list from the pdf"""
+# list = page_content.splitlines()
+# #print(list)
+#
+# # index_date = list.index('Original Spud Date')
+# # date = index_date+1
+# # #print(list[date])
+# #
+# # index_API = list.index('API / UWI')
+# # API = index_API+1
+# # #print(list[API])
+#
+# def follow(x):
+#     if(x in list):
+#         y = list.index(x)
+#         return list[y+1]
+#     else:
+#         return "Not in list"
+#
+# API = follow('API / UWI')
+# #print(API)
+# DATE = follow('Original Spud Date')
+# #print(DATE)
+#
+# """take the contents from list and put the good stuff into list_content"""
+# start = list.index("al)",)
+# end  = list.index("0District")
+# list_content = []
+# list_content = list[start+1:end]
+# #print(list_content)
+#
+# """Make all list_content into one big string test"""
+# test = ''
+# for i in list_content:
+#     x = i
+#     test = test + x
+# #print(" ")
+# #print(test)
+#
+# # TODO Come Back later!
+# list_org = test.split()
+# #print(" ")
+# #print(list_org)
+#
+# """EXCEL TIME"""
+# wb = load_workbook(filename = r"C:\Users\Ephraim.Sun\Desktop\proj2\practice.xlsx")
+# ws = wb.active
+#
+# row_cell = ' '
+# cell_Date = ' '
+#
+# for row in ws.iter_rows():
+#     for cell in row:
+#         if cell.value == API:
+#             row_cell = cell.row
+# #print(row_cell)
+#
+# for row in ws.iter_rows():
+#     for cell in row:
+#         if cell.value == 'Spud Date':
+#             cell_Date = cell.coordinate
+# #print(cell_Date)
+#
+# # print(type(row_cell))
+# # print(type(cell_Date))
+# cell_col = cell_Date.rstrip(cell_Date[1])
+# #print(cell_col)
+# coordinates = str(cell_col) + str(row_cell)
+# #print(coordinates)
+# ws[coordinates] = DATE
+# #print(DATE)
+#
+# wb.save(filename = r'C:\Users\Ephraim.Sun\Desktop\proj2\practice.xlsx')
+
+# """DIRECTORY"""
+# rootdir = r'C:\Users\Ephraim.Sun\Desktop\proj2\test'
+#
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         if file.endswith("CURRENT SCHEMATIC.pdf"):
+#             pdfFileObj = os.path.join(subdir, file)
