@@ -5,11 +5,11 @@ import os
 from methods import follow, comment, frac_Date, open_hole
 
 '''Open excel worksheet'''
-wb = load_workbook(filename=r"C:\Users\Ephraim.Sun\Desktop\proj2\testrun.xlsx")
+wb = load_workbook(filename=r"")  # put in excel path
 ws = wb.active
 
 '''Loop through each file in rootdir'''
-rootdir = r'C:\Users\Ephraim.Sun\Desktop\proj2\test'
+rootdir = r''  # put in folder path
 
 for subdir, dirs, files in os.walk(rootdir):
     for file in files:
@@ -44,7 +44,8 @@ for subdir, dirs, files in os.walk(rootdir):
 
             '''Use Keywords to extract info from the string'''
             test1 = test
-            keywords = ["Hydraulic Fracture", 'Hydraulic Frac-Other', "Hydraulic Frac", "Sand Frac", "Hydrl Frac-Acid Base", "Hydrl Frac",
+            keywords = ["Hydraulic Fracture", 'Hydraulic Frac-Other', "Hydraulic Frac",
+                        "Sand Frac", "Hydrl Frac-Acid Base", "Hydrl Frac",
                         "Acid Frac", "Fracture", "Frac"]
             new_str = comment(keywords, test1)
             frac_time = frac_Date(keywords, test1)
@@ -92,4 +93,4 @@ for subdir, dirs, files in os.walk(rootdir):
                 ws[coordinates2] = frac_openhole
 
 '''Save excel worksheet'''
-wb.save(filename=r'C:\Users\Ephraim.Sun\Desktop\proj2\testrun.xlsx')
+wb.save(filename=r'')  # put in excel path
