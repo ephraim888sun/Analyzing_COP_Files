@@ -33,7 +33,7 @@ def getName(str_list):
     new_str = str_list[9:end]
     return new_str
 
-def comment(y, test1, boo):
+def comment(y, test1):
     newstr = " "
     for x in y:
         if (test1.find(x) != -1):
@@ -53,7 +53,7 @@ def comment(y, test1, boo):
     return newstr
 
 
-def frac_Date(y, test1, boo):
+def frac_Date(y, test1):
     fracstr = " "
     for x in y:
         if (test1.find(x) != -1):
@@ -72,7 +72,7 @@ def frac_Date(y, test1, boo):
                     test1 = test1[0:indx] + test1[indx + z:]
     return fracstr
 
-def open_hole(y, test1, boo):
+def open_hole(y, test1):
     openstr = " "
     for x in y:
         if (test1.find(x) != -1):
