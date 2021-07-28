@@ -5,11 +5,11 @@ import os
 from methods import follow, comment, frac_Date, open_hole
 
 '''Open excel worksheet'''
-wb = load_workbook(filename=r"")  # put in excel path
+wb = load_workbook(filename=r"C:\Users\Ephraim.Sun\Desktop\temp.xlsx")  # put in excel path
 ws = wb.active
 
-'''Loop through each file in rootdir'''
-rootdir = r''  # put in folder path
+'''Loop through each file in root directory'''
+rootdir = r'C:\Users\Ephraim.Sun\Desktop\proj2\test'  # put in folder path
 
 for subdir, dirs, files in os.walk(rootdir):
     for file in files:
@@ -62,6 +62,7 @@ for subdir, dirs, files in os.walk(rootdir):
                     if cell.value == API:
                         row_cell = cell.row
 
+
             for row in ws.iter_rows():
                 for cell in row:
                     if cell.value == 'Comments':
@@ -72,6 +73,7 @@ for subdir, dirs, files in os.walk(rootdir):
                 coordinates = str(cell_col) + str(row_cell)
                 ws[coordinates] = new_str
 
+
             for row in ws.iter_rows():
                 for cell in row:
                     if cell.value == 'Frac Date':
@@ -81,6 +83,7 @@ for subdir, dirs, files in os.walk(rootdir):
                 cell_col1 = cell_fracDate.rstrip(cell_fracDate[1])
                 coordinates1 = str(cell_col1) + str(row_cell)
                 ws[coordinates1] = frac_time
+
 
             for row in ws.iter_rows():
                 for cell in row:
@@ -93,4 +96,4 @@ for subdir, dirs, files in os.walk(rootdir):
                 ws[coordinates2] = frac_openhole
 
 '''Save excel worksheet'''
-wb.save(filename=r'')  # put in excel path
+wb.save(filename=r'C:\Users\Ephraim.Sun\Desktop\temp.xlsx')  # put in excel path
