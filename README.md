@@ -17,4 +17,4 @@ To complete this project, I broke down the steps into multiple parts. For each d
 
 To extract the info, I used PyPDF2 to extract text from the pdf. Then, I was able to parse the information based on date format and keywords. Once I got the information that I needed, I used openpyxl to populate the cell. I repeated this process until all the cells were filled. Then I saved this workbook.
 
-To make sure that I filled the excel sheet correctly, I manually verified the data and put it the minor details that I missed with my python script. Manually doing this would be around 3 weeks. I was able to complete the work & code in less than a week or so, meaning that we were able to save 2 weeks b/c of automation.
+To make sure that I filled the excel sheet correctly, I manually verified the data and put it the minor details that I missed with my python script. We were able to save 2 weeks b/c of automation.
